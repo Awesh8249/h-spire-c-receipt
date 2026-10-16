@@ -9,7 +9,7 @@
     {
       "binding": "DB",
       "database_name": "h-spirec-db",
-      "database_id": "REPLACE_WITH_YOUR_CLOUDFLARE_D1_DATABASE_ID",
+     "database_id": "e6555eb9-b5d1-46b5-9f66-95f8ee5871a8",,
       "migrations_dir": "migrations"
     }
   ]
