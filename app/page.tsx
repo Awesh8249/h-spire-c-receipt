@@ -333,7 +333,7 @@ export default function Home() {
           <div className="formCard compact">
             <div className="authTabs">
               <button className={authMode === "login" ? "active" : "secondary"} onClick={() => setAuthMode("login")}>Login</button>
-              <button className={authMode === "setup" ? "active" : "secondary"} onClick={() => setAuthMode("setup")}>Sign Up</button>
+              <button className={authMode === "setup" ? "active" : "secondary"} onClick={() => setAuthMode("setup")}>First-time setup</button>
             </div>
             <label>
               Authorised mobile
@@ -347,7 +347,7 @@ export default function Home() {
               />
             </label>
             {authMode === "login" && <label>Password<input value={adminPin} onChange={(e) => setAdminPin(e.target.value.slice(0, 72))} type="password" autoComplete="current-password" placeholder="Enter your password" /></label>}
-            {authMode === "setup" && <label>Setup code<input value={setupCode} onChange={(e) => setSetupCode(e.target.value.toUpperCase())} placeholder="Enter setup code" /></label>}
+            {authMode === "setup" && <label>Head Admin setup code<input value={setupCode} onChange={(e) => setSetupCode(e.target.value.toUpperCase())} placeholder="Enter setup code" /></label>}
             {authMode === "invite" && <label>One-time invitation code<input value={setupCode} onChange={(e) => setSetupCode(e.target.value.toUpperCase())} placeholder="Invitation code" /></label>}
             {authMode === "recover" && <label>Recovery code<input value={recoveryCode} onChange={(e) => setRecoveryCode(e.target.value.toUpperCase())} placeholder="Saved recovery code" /></label>}
             {authMode !== "login" && <label>{authMode === "recover" ? "New password" : "Choose password"}<input value={newPin} onChange={(e) => setNewPin(e.target.value.slice(0, 72))} type="password" autoComplete="new-password" placeholder="8+ characters with letters and numbers" /></label>}
@@ -356,7 +356,7 @@ export default function Home() {
             </button>
             <div className="authLinks">
               <button className={authMode === "recover" ? "active" : ""} onClick={() => setAuthMode("recover")}>Forgot Password?</button>
-              <button className={authMode === "invite" ? "active" : ""} onClick={() => setAuthMode("invite")}>Accept Invite</button>
+              <button className={authMode === "invite" ? "active" : ""} onClick={() => setAuthMode("invite")}>Accept Invite (other admins)</button>
             </div>
             <p className="status">{status}</p>
           </div>

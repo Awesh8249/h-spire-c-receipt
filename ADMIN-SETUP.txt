@@ -1,0 +1,32 @@
+H-SPIRE C RECEIPT — ADMIN SETUP
+
+The project files are in this folder. To install this copy, extract the ZIP and
+copy its files into your existing h-spire-c-receipt GitHub folder, replacing
+matching files. Keep your existing .env or .dev.vars files private.
+
+FIRST ADMIN (Cloudflare Worker settings)
+1. In Cloudflare, open Workers & Pages, select h-spire-c-receipt, then Settings > Variables and Secrets.
+2. Set HEAD_ADMIN_MOBILE to the Head Admin's 10-digit phone number.
+3. Set ADMIN_BOOTSTRAP_CODE to the initial setup code you want to use. The old
+   AEIOU2005 value is not built into the website; if you still want it for the
+   first setup, enter it here as a secret. For better security, use a new code.
+4. Set HEAD_ADMIN_RECOVERY_CODE to a different, private recovery code.
+5. Set ADMIN_SESSION_SECRET to a private random value of at least 32 characters.
+6. Save the settings and deploy the Worker again.
+7. On the website choose Admin > First-time setup, enter the same phone number
+   as HEAD_ADMIN_MOBILE, the ADMIN_BOOTSTRAP_CODE, and create a password.
+
+The Head Admin phone is automatically allowed for first-time setup, so it does
+not also need to be entered in SETUP_ADMIN_MOBILES.
+
+OTHER ADMINS
+After the Head Admin logs in, open Admin Management > Add another administrator.
+Enter that person's 10-digit phone and choose Create Invite. The site creates a
+random code for that person. It expires after 24 hours and works once. The new
+admin chooses Accept Invite (other admins), enters their phone and code, and
+creates a password. Do not share invitation codes publicly.
+
+DATABASE
+The existing migration 0001_initial_schema.sql is already applied to the remote
+D1 database. Do not apply it again or edit it. This change does not need another
+D1 migration.

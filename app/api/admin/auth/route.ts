@@ -4,13 +4,17 @@ import { getDb } from "../../../../db";
 import { admins, loginSecurity } from "../../../../db/schema";
 import { authenticatedAdmin, clearSessionCookie, hashSecret, isHeadAdmin, randomCode, sessionCookie, verifySecret } from "../../../../lib/admin-auth";
 
-const setupAdmins = () =>
-  new Set(
-    String(env.SETUP_ADMIN_MOBILES || "")
-      .split(",")
-      .map((value) => value.replace(/\D/g, ""))
-      .filter((value) => /^\d{10}$/.test(value)),
-  );
+const setupAdmins = () => {
+  const configured = String(env.SETUP_ADMIN_MOBILES || "")
+    .split(",")
+    .map((value) => value.replace(/\D/g, ""))
+    .filter((value) => /^\d{10}$/.test(value));
+  // The Head Admin is always eligible for initial setup. This avoids a mismatch
+  // between HEAD_ADMIN_MOBILE and SETUP_ADMIN_MOBILES blocking the first login.
+  const headMobile = String(env.HEAD_ADMIN_MOBILE || "").replace(/\D/g, "");
+  if (/^\d{10}$/.test(headMobile)) configured.push(headMobile);
+  return new Set(configured);
+};
 const isSetupAdmin = (mobile: string) => setupAdmins().has(mobile);
 const validPassword = (value: string) => value.length >= 8 && value.length <= 72 && /[A-Za-z]/.test(value) && /\d/.test(value);
 const normalizeCode = (value: unknown) => String(value || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
