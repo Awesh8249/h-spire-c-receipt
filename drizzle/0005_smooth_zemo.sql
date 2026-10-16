@@ -1,0 +1,1 @@
+ALTER TABLE `admins` ADD `last_login_at` integer DEFAULT 0 NOT NULL;

@@ -1,0 +1,77 @@
+.dashboardLink {
+  margin-top: 1rem;
+  background: transparent;
+  color: #efd17e;
+  border-color: #8f793b;
+}
+.billActions {
+  display: grid;
+  gap: 0.5rem;
+  align-content: center;
+}
+.continueBill {
+  background: #183823;
+  color: #c5f2d0;
+  border-color: #3d7650;
+}
+.terms .digital a {
+  color: #b78934;
+  font-weight: 800;
+  text-decoration: underline;
+}
+.receiptActionButtons {
+  display: flex;
+  gap: 0.6rem;
+}
+.savedNotice {
+  margin: -0.4rem 0 1rem;
+  color: #bfe5c8;
+  font-size: 0.82rem;
+  text-align: right;
+}
+@media (max-width: 560px) {
+  .receiptActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .receiptActionButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .savedNotice {
+    text-align: left;
+  }
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  .savedNotice {
+    display: none;
+  }
+  .paper {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 18mm;
+    overflow: visible;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .receiptHeader,
+  .receiptMeta,
+  .details,
+  .totals {
+    break-inside: avoid;
+  }
+}
+@media (max-width: 700px) {
+  .billActions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .billActions button {
+    width: 100%;
+  }
+}

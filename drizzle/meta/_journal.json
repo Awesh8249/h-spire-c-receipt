@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791464450587,
+      "tag": "0000_charming_blue_blade",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791686980697,
+      "tag": "0001_brown_blacklash",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791695637054,
+      "tag": "0002_kind_the_renegades",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1791873364537,
+      "tag": "0003_amused_lady_mastermind",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1791881051860,
+      "tag": "0004_third_firebrand",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791900210401,
+      "tag": "0005_smooth_zemo",
+      "breakpoints": true
+    }
+  ]
+}

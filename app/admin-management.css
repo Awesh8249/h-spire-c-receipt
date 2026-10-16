@@ -1,0 +1,12 @@
+.adminRefresh{margin-top:1rem}
+.adminStats{display:flex!important;justify-content:space-between;align-items:center;margin-top:1rem;padding:.9rem 1rem;border:1px solid #4a3d25;border-radius:10px;background:#0c0c0c;color:#bdb19a}
+.adminStats b{color:#f0d28a}
+.adminAccount{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:.65rem;padding:.85rem 1rem;border:1px solid #3d3425;border-radius:10px;background:#111}
+.adminAccount>div{display:grid;gap:.2rem}
+.adminAccount strong{color:#f4ddb0}
+.adminAccount small{color:#978d7a}
+.adminAccount>span{display:flex;gap:.45rem}
+.adminAccount button{min-height:38px;padding:.5rem .7rem;font-size:.75rem}
+.passwordAssign{display:grid!important;grid-template-columns:1fr auto auto!important;align-items:end;gap:.55rem;margin-top:1rem;padding:1rem;border:1px solid #68522d;border-radius:10px;background:#0c0c0c}.passwordAssign label{display:grid;gap:.35rem;color:#cbbd9f}.passwordAssign input{width:100%;min-height:44px;padding:.7rem;border:1px solid #4a3d25;border-radius:8px;background:#101010;color:#f5e9cc}
+.authLinks{display:flex!important;grid-template-columns:none!important;justify-content:space-between;gap:1rem;margin-top:.65rem}.authLinks button{min-height:auto;padding:.25rem 0;border:0;background:transparent;color:#bba779;font-size:.78rem;text-decoration:underline;text-underline-offset:4px}.authLinks button:hover,.authLinks button.active{color:#f1d38b;background:transparent}
+@media(max-width:700px){.adminStats,.adminAccount{align-items:flex-start;flex-direction:column}.adminAccount>span{width:100%;display:grid;grid-template-columns:1fr}.adminAccount button{width:100%}.passwordAssign{grid-template-columns:1fr!important}}
